@@ -46,17 +46,14 @@ This plan will guide you through creating a new, clean project structure and mov
 We will create a new folder for the fixed project to avoid touching your current, broken version.
 
 Scope:Terminal
-
-Tip: ?+space 
-
 Directions: Navigate to where your projects are stored
-
 Command 1:
 
 ```
 cd ~/Developer # Or your preferred directory
 ```
-```basg \
+```bash
+ \
 # Create a new folder for the clean project \
 mkdir CreativeHub_Fixed \
 cd CreativeHub_Fixed \
@@ -77,19 +74,14 @@ The main target is named after your project
 This is the most critical step. **Do not** drag and drop the old project folder. You must copy **only the .swift source files** from your old, broken project into the new, clean structure you just created.
 
 For example:
-
 - Copy your old ChefData.swift into CreativeHub_Fixed/Sources/CreativeHub_Fixed/Features/Chefs/Models/.
-
 - Copy your old RecipeCardView.swift into CreativeHub_Fixed/Sources/CreativeHub_Fixed/Features/Recipes/Views/.
-
 - ...and so on for every .swift file.
 
 ### Step 5: Define the Project in Package.swift
-
 Now, we tell the Swift Package Manager about our app. Open the Package.swift file in your CreativeHub_Fixed directory and replace its contents with this:
 
-```
-```
+```swift
 // swift-tools-version: 5.9 \
 import PackageDescription \
  \
@@ -119,7 +111,7 @@ let package = Package( \
 ) \
 ```
 
-**Note:** I've renamed the name in executableTarget to match the folder structure. The path parameter explicitly tells the compiler where to find your source files.
+> **Note:** I've renamed the name in executableTarget to match the folder structure. The path parameter explicitly tells the compiler where to find your source files.
 
 ### Step 6: Build from the Terminal
 
